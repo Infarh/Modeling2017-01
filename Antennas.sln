@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Antennas", "Antennas\Antennas.csproj", "{4ED1F24E-2F3B-4196-AD7D-E432CADEB43C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestGUI_Forms", "TestGUI_Forms\TestGUI_Forms.csproj", "{E0AB57C8-9843-44FD-9EB9-D5F4709CBB87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntennaGUI_WPF", "AntennaGUI_WPF\AntennaGUI_WPF.csproj", "{4CD2F25F-8A2C-4076-BC62-B03C5A90D79F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4ED1F24E-2F3B-4196-AD7D-E432CADEB43C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ED1F24E-2F3B-4196-AD7D-E432CADEB43C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ED1F24E-2F3B-4196-AD7D-E432CADEB43C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ED1F24E-2F3B-4196-AD7D-E432CADEB43C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0AB57C8-9843-44FD-9EB9-D5F4709CBB87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0AB57C8-9843-44FD-9EB9-D5F4709CBB87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0AB57C8-9843-44FD-9EB9-D5F4709CBB87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0AB57C8-9843-44FD-9EB9-D5F4709CBB87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CD2F25F-8A2C-4076-BC62-B03C5A90D79F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CD2F25F-8A2C-4076-BC62-B03C5A90D79F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CD2F25F-8A2C-4076-BC62-B03C5A90D79F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CD2F25F-8A2C-4076-BC62-B03C5A90D79F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

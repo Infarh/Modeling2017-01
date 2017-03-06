@@ -1,0 +1,29 @@
+﻿<Window x:Class="Antennas.GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:l="clr-namespace:Antennas.GUI"
+        xmlns:oxy="http://oxyplot.org/wpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.DataContext>
+        <l:MainModel/>
+    </Window.DataContext>
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top">
+            <Button Content="Update" Command="{Binding Update}"/>
+        </StackPanel>
+        <oxy:Plot>
+            <oxy:Plot.Axes>
+                <oxy:LinearAxis Position="Left" Title="Im" MajorGridlineStyle="Solid" MinorGridlineStyle="Dot"/>
+                <oxy:LinearAxis Position="Bottom"  Title="Re" MajorGridlineStyle="Solid" MinorGridlineStyle="Dot"/>
+            </oxy:Plot.Axes>
+            <oxy:Plot.Series>
+                <oxy:LineSeries Title="Values" ItemsSource="{Binding Values}"
+                                DataFieldX="Real" DataFieldY="Imaginary"
+                                StrokeThickness="2" Color="Red"/>
+            </oxy:Plot.Series>
+        </oxy:Plot>
+    </DockPanel>
+</Window>
