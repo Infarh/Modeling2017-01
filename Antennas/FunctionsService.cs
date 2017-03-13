@@ -36,7 +36,7 @@ namespace Antennas
             var s1 = .0;
             var s2 = f(x + dx05);
 
-            var N = (int)((b - a) / dx).Abs();
+            var N =  (int)((b - a) / dx).Abs();
             for(var i = 1; i < N; i++)
             {
                 s1 += f(x += dx);
