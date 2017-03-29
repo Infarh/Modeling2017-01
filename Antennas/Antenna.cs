@@ -5,7 +5,15 @@ namespace Antennas
 {
     public abstract class Antenna
     {
+        /// <summary>
+        /// КНД антенны
+        /// </summary>
         public double D { get { return GetKND(); } }
+
+        /// <summary>
+        /// Менеджер диаграммы направленности антенны
+        /// </summary>
+        public PtternManager BeamManager { get { return new PtternManager(Pattern); } }
 
         private double GetKND()
         {

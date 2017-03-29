@@ -7,10 +7,14 @@ namespace Antennas
     {
         private static void Main(string[] args)
         {
-            FileSystemWatcher fsw = new FileSystemWatcher("c:\\123");
-            fsw.Created += FswOnCreated;
-            fsw.Deleted += FswOnDeleted;
-            fsw.EnableRaisingEvents = true;
+            var antenna = new DipoleAntenna();
+
+            var pm = antenna.BeamManager;
+
+            for(var i = 0; i < pm.Values.Length; i++)
+                Console.WriteLine("{0}\t-\t{1}", 
+                    pm.Values[i].th * 180 / Math.PI, 
+                    pm.Values[i].value);
 
             Console.ReadLine();
         }

@@ -51,6 +51,7 @@
     <Compile Include="FunctionsService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PtternManager.cs" />
     <Compile Include="UniformAntenna.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
