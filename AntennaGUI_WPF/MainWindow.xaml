@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AntennaGUI_WPF"
+        xmlns:oxy="clr-namespace:OxyPlot.Wpf;assembly=OxyPlot.Wpf"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Window.DataContext>
@@ -27,11 +28,24 @@
         </Menu>
 
         <StackPanel Grid.Column="0" Grid.Row="1">
-            <TextBlock Text="{Binding Data}"/>
-            <TextBox Text="{Binding Data, UpdateSourceTrigger=PropertyChanged}"/>
-            <Button Content="Press me!"/>
+            <TextBlock Text="Длина вибратора:"/>
+            <TextBox Text="{Binding Length, UpdateSourceTrigger=PropertyChanged}"/>
+            <ScrollBar Orientation="Horizontal" Minimum="0.1" Maximum="1"
+                       Value="{Binding Length}" 
+                       SmallChange="0.01" LargeChange="0.1"/>
         </StackPanel>
-        
-        
+
+        <oxy:Plot Grid.Column="1" Grid.Row="1">
+            <oxy:Plot.Axes>
+                <oxy:LinearAxis Position="Bottom" Title="Th"/>
+                <oxy:LinearAxis Position="Left" Title="|F(Th)|"/>
+            </oxy:Plot.Axes>
+            <oxy:Plot.Series>
+                <oxy:LineSeries ItemsSource="{Binding Antenna.BeamManager.Values}"
+                                DataFieldX="th" DataFieldY="Abs"/>
+            </oxy:Plot.Series>
+        </oxy:Plot>
+
+
     </Grid>
 </Window>

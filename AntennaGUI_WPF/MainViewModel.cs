@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using Antennas;
 
 namespace AntennaGUI_WPF
@@ -13,7 +14,7 @@ namespace AntennaGUI_WPF
                 PropertyChanged(this, new PropertyChangedEventArgs(PropertyName));
         }
 
-        private Vibrator f_Antenna;
+        private Vibrator f_Antenna = new Vibrator(0.5);
         public Vibrator Antenna
         {
             get { return f_Antenna; }
@@ -24,17 +25,18 @@ namespace AntennaGUI_WPF
             }
         }
 
-        private string f_Data;
+        private double f_Length = 0.5;
 
-        public string Data
+        public double Length
         {
-            get { return f_Data; }
+            get { return f_Length; }
             set
             {
-                f_Data = value;
-                OnPropertyChanged("Data");
+                if(value <= 0 || value > 1) return;
+                f_Length = value;
+                OnPropertyChanged("Length");
+                Antenna = new Vibrator(value);
             }
         }
-
     }
 }

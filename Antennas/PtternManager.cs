@@ -9,25 +9,7 @@ namespace Antennas
     /// </summary>
     public class PtternManager
     {
-        /// <summary>
-        /// Один одсчёт диаграммы направленности
-        /// </summary>
-        public struct BeamValue
-        {
-            /// <summary>
-            /// Угол измеренного значения ДН
-            /// </summary>
-            public double th;
-            /// <summary>
-            /// Измерянное значение ДН для указанного угла
-            /// </summary>
-            public Complex value;
-
-            public double Abs { get { return Math.Sqrt(Power); } }
-            public double Phase { get { return Math.Atan2(value.Imaginary, value.Real); } }
-            public double Power { get { return value.Real * value.Real + value.Imaginary * value.Imaginary; } }
-            public double Power_db { get { return Math.Log10(Power); } }
-        }
+        
 
         /// <summary>
         /// Массив измерянных значений ДН
@@ -58,5 +40,25 @@ namespace Antennas
             Values = list.ToArray();
         }
 
+    }
+
+    /// <summary>
+    /// Один одсчёт диаграммы направленности
+    /// </summary>
+    public struct BeamValue
+    {                           
+        /// <summary>
+        /// Угол измеренного значения ДН
+        /// </summary>
+        public double th { get; set; }
+        /// <summary>
+        /// Измерянное значение ДН для указанного угла
+        /// </summary>
+        public Complex value { get; set; }
+
+        public double Abs { get { return Math.Sqrt(Power); } }
+        public double Phase { get { return Math.Atan2(value.Imaginary, value.Real); } }
+        public double Power { get { return value.Real * value.Real + value.Imaginary * value.Imaginary; } }
+        public double Power_db { get { return Math.Log10(Power); } }
     }
 }
